@@ -22,8 +22,6 @@ const request = requestFactory({
   jar: true
 })
 
-var sNumClient = ''
-
 module.exports = new BaseKonnector(start)
 
 // The start function is run by the BaseKonnector instance only when it got all the account
@@ -35,7 +33,7 @@ async function start(fields) {
   log('info', 'Successfully logged in')
 
   log('info', 'Parsing list of documents')
-  const documents = await parseDocuments(sNumClient)
+  const documents = await parseDocuments()
 
   // here we use the saveBills function even if what we fetch are not bills, but this is the most
   // common case in connectors
@@ -59,11 +57,9 @@ function authenticate(username, password) {
     // the validate function will check if the login request was a success. Every website has
     // different ways respond: http status code, error message in html ($), http redirection
     // (fullResponse.request.uri.href)...
-    validate: (statusCode, $, fullResponse) => {
+    validate: (statusCode, $) => {
       // The login in toscrape.com always works excepted when no password is set
       if ($(`a[href='/Portail/fr-FR/Usager/Home/Logout']`).length === 1) {
-        let tabURL = fullResponse.request.uri.href.split('/')
-        sNumClient = tabURL[tabURL.length - 1]
         return true
       } else {
         // cozy-konnector-libs has its own logging function which format these logs with colors in
@@ -76,11 +72,12 @@ function authenticate(username, password) {
 
 // The goal of this function is to parse a html page wrapped by a cheerio instance
 // and return an array of js objects which will be saved to the cozy by saveBills (https://github.com/konnectors/libs/blob/master/packages/cozy-konnector-libs/docs/api.md#savebills)
-async function parseDocuments(sNumClient) {
+async function parseDocuments() {
   var nDepart = 0
   var tabDocs = []
   // Tant qu'il y a des documents
-  while (true) {
+  let bTrue = true;
+  while (bTrue) {
     log('info', 'Récupération des factures')
     // On récupère les factures en commencant à nDepart * 10 (on récupère 10 factures à chaque fois)
     var tabFactures = await GetFactures(nDepart * 10)
@@ -164,9 +161,13 @@ async function GetFactures(nDepart) {
   )
 
   var tabDocs = []
-  var oUnDoc = {}
 
   for (var i = 0; i < oObjet.aaData.length; i++) {
+    // On déclare l'objet dans la boucle car la déclaration crée un nouvel objet
+    // Si on ne crée pas l'objet dans la boucle, on ajoute systématiquement le même objet (référence)
+    // Et on modifie toujours le meme objet
+    var oUnDoc = {}
+
     oUnDoc.reference = oObjet.aaData[i][0]
     oUnDoc.date = parseDate(oObjet.aaData[i][1])
     oUnDoc.filename = normalizeFileName(
@@ -175,10 +176,6 @@ async function GetFactures(nDepart) {
       oUnDoc.reference
     )
     oUnDoc.amount = normalizePrice(oObjet.aaData[i][4])
-
-    {
-      ;('POST')
-    }
     oUnDoc.currency = '€'
     oUnDoc.vendor = 'CESML'
 
@@ -204,6 +201,8 @@ async function GetFactures(nDepart) {
         },
         function(error, response, body) {
           log('debug', response)
+          log('debug', body)
+          log('debug', error)
         }
       )
     }
