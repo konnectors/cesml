@@ -1617,18 +1617,18 @@ cosmiconfig@^5.0.7:
     js-yaml "^3.9.0"
     parse-json "^4.0.0"
 
-cozy-app-publish@0.10.3:
-  version "0.10.3"
-  resolved "https://registry.yarnpkg.com/cozy-app-publish/-/cozy-app-publish-0.10.3.tgz#5a3bd3a860e827b45fbbdb2f7a0e8067c4f59133"
-  integrity sha512-r7gI8zKtv1L+qvTpBxqgJ+WYCurpETeUCivPnuaCQU3BUODvwv+Ej9yrzvwPa/tts4Uy2UIw3c9lgIW1+AkYIg==
+cozy-app-publish@0.10.5:
+  version "0.10.5"
+  resolved "https://registry.yarnpkg.com/cozy-app-publish/-/cozy-app-publish-0.10.5.tgz#01992b00b904623434253bab6b3c3bdb31eeaf77"
+  integrity sha512-e8JQPHrJVbUhtuiu1VEy8G6fCHiQatlx0j4dFQ99oC2ora6gr19UZWCRrgPq4tIBVgG1m18a06JDVCriu/wedg==
   dependencies:
     chalk "2.4.2"
     commander "2.19.0"
     cross-spawn "6.0.5"
     fs-extra "7.0.1"
-    node-fetch "2.2.0"
+    node-fetch "2.3.0"
     prompt "1.0.0"
-    request "^2.88.0"
+    request "2.88.0"
     tar "4.4.8"
 
 cozy-client-js@0.9.0:
@@ -5028,10 +5028,10 @@ node-ensure@^0.0.0:
   resolved "https://registry.yarnpkg.com/node-ensure/-/node-ensure-0.0.0.tgz#ecae764150de99861ec5c810fd5d096b183932a7"
   integrity sha1-7K52QVDemYYexcgQ/V0Jaxg5Mqc=
 
-node-fetch@2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.2.0.tgz#4ee79bde909262f9775f731e3656d0db55ced5b5"
-  integrity sha512-OayFWziIxiHY8bCUyLX6sTpDH8Jsbp4FfYd1j1f7vZyfgkcOnAyM4oQR16f8a0s7Gl/viMGRey8eScYk4V4EZA==
+node-fetch@2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.3.0.tgz#1a1d940bbfb916a1d3e0219f037e89e71f8c5fa5"
+  integrity sha512-MOd8pV3fxENbryESLgVIeaGKrdl+uaYhCSSVkjeOb/31/njTpcis5aWfdqgNlHIrKOLRbMnfPINPOML2CIFeXA==
 
 node-fetch@^1.0.1:
   version "1.7.3"
@@ -6365,7 +6365,7 @@ request-promise@4.2.2:
     stealthy-require "^1.1.0"
     tough-cookie ">=2.3.3"
 
-request@2, request@2.88.0, request@^2.87.0, request@^2.88.0:
+request@2, request@2.88.0, request@^2.87.0:
   version "2.88.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.88.0.tgz#9c2fca4f7d35b592efe57c7f0a55e81052124fef"
   integrity sha512-NAqBSrijGLZdM0WZNsInLJpkJokL72XYjUpnB0iwsRgxh7dB6COrHnTBNwN0E+lHDAJzu7kLAkDeY08z2/A0hg==
