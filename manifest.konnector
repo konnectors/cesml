@@ -1,14 +1,14 @@
 {
   "version": "1.0.0",
-  "name": "Coop d'éléctricité de St Martin de Londres",
+  "name": "Connector template",
   "type": "konnector",
   "language": "node",
-  "icon": "icon.svg",
-  "slug": "cesml",
-  "source": "git://github.com/konnectors/cesml.git",
+  "icon": "icon.png",
+  "slug": "CESML",
+  "source": "git://github.com/konnectors/cozy-konnector-template.git",
   "editor": "Cozy",
-  "vendor_link": "https://cesml.com/",
-  "categories": ["energy"],
+  "vendor_link": "Link to the target website",
+  "categories": ["other"],
   "fields": {
     "login": {
       "type": "text"
