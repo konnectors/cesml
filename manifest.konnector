@@ -49,8 +49,8 @@
   "langs": ["fr", "en"],
   "locales": {
     "fr": {
-      "short_description": "Template de connecteur",
-      "long_description": "Ce template récupère une liste de livres sur un site de scraping",
+      "short_description": "Récupère vos factures",
+      "long_description": "CESML : Coopérative d'électricité de Saint Martin de Londres\n\nRécupère vos factures d'électricité",
       "permissions": {
         "bank operations": {
           "description": "Utilisé pour relier les factures à des operations bancaires"
@@ -67,8 +67,8 @@
       }
     },
     "en": {
-      "short_description": "Connector template",
-      "long_description": "This template fetches a list of books from a scraping website",
+      "short_description": "Fetch your bills",
+      "long_description": "CESML : Coopérative d'électricité de Saint Martin de Londres\n\nFetch your electricity bills",
       "permissions": {
         "bank operations": {
           "description": "Required to link bank operations to bills"
