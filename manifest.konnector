@@ -1,12 +1,12 @@
 {
   "version": "1.0.0",
-  "name": "CESML",
+  "name": "Coop d'éléctricité de St Martin de Londres",
   "type": "konnector",
   "language": "node",
-  "icon": "icon.png",
-  "slug": "CESML",
+  "icon": "icon.svg",
+  "slug": "cesml",
   "source": "git://github.com/konnectors/cesml.git",
-  "editor": "Marc Polycarpe",
+  "editor": "Cozy",
   "vendor_link": "https://cesml.com/",
   "categories": ["energy"],
   "fields": {
@@ -43,14 +43,14 @@
     }
   },
   "developer": {
-    "name": "Marc Polycarpe",
+    "name": "Cozy Cloud",
     "url": "https://cozy.io"
   },
   "langs": ["fr", "en"],
   "locales": {
     "fr": {
-      "short_description": "Connecteur CESML",
-      "long_description": "Ce template récupère vos factures de la Coopérative d'Electricité de Saint Martin de Londres",
+      "short_description": "Récupère vos factures",
+      "long_description": "CESML : Coopérative d'électricité de Saint Martin de Londres\n\nRécupère vos factures d'électricité",
       "permissions": {
         "bank operations": {
           "description": "Utilisé pour relier les factures à des operations bancaires"
@@ -67,8 +67,8 @@
       }
     },
     "en": {
-      "short_description": "CESML Connector",
-      "long_description": "This template fetches your bills from the CESML website (French electricity provider)",
+      "short_description": "Fetch your bills",
+      "long_description": "CESML : Coopérative d'électricité de Saint Martin de Londres\n\nFetch your electricity bills",
       "permissions": {
         "bank operations": {
           "description": "Required to link bank operations to bills"
