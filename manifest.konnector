@@ -5,7 +5,7 @@
   "language": "node",
   "icon": "icon.svg",
   "slug": "cesml",
-  "source": "git://github.com/konnectors/cesml.git",
+  "source": "git@github.com:konnectors/cesml.git",
   "editor": "Cozy",
   "vendor_link": "https://cesml.com/",
   "categories": [
