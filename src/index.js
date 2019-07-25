@@ -80,7 +80,7 @@ async function parseDocuments() {
   var nDepart = 0
   var tabDocs = []
   // Tant qu'il y a des documents
-  let bTrue = true;
+  let bTrue = true
   while (bTrue) {
     log('info', 'Récupération des factures')
     // On récupère les factures en commencant à nDepart * 10 (on récupère 10 factures à chaque fois)
