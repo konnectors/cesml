@@ -3,7 +3,7 @@ node_js:
 - '12'
 env:
   global:
-  - DEPLOY_REPOSITORY="git@github.com:konnectors/cesml.git"
+  # REGISTRY_TOKEN(editor=cozy, app=cesml)
   - secure: Lr2GGC8yzZyGwuamkHFxv1WOXPPRdRzXv02RfTPrFUCL/z6O82Akdx5DWsAiySSvpXfCiRvxXLAs3joebzt5vEFCDlxflvRS/o2ObI2UBw4jz1NUJLGtfppweRA1LUyaBInoALvRgQIKJXe4bI3ExzVknca55qTAmYE+TEPExz/MG950H7OzOK+DA7BLi8I0i3GpUcBT8g9962acuRNfhTk+kqLNKsy9zQwm44Fe0hYUyS0qSznN3zFVEs4Jo9ml0f5pAuCo2LIyd/7GGoIibmWiqrT29EPTvj32FDv1ka5OhHAks/v7tV+Li1UDGESrG5pRJzzkCENaXekczbDoBMGtaM6/vY7TK1/0+r0gqCSlLtmtJCTlxnrNMDEDWpRpg3GHLdknUp49cqhCaPV0N8i8QQuUxrLoY+xa+UyrAqLOZfL+2NGuVO27zlkgB4mjlUFTZvqm2NEI7XZ1vyZNPZiV361waMsl4bCeyXR3HnTaRFZanA/FBltCXxauj1D6V+UtHF6GlaG21EzngE6app78p3oVH/axYa+i43ZwFTOuewCC9okUXrArugG9ViuDGa9AkaLZUT72RTE64hfW9K9c/LivUj71cpTg4bUtpAtedLC9R9vsiHrn4aBENDss5XHsraR7Kns0a3C54YWM1OL3g8fDUUHr7dfSawhKaTw=
 cache:
   yarn: true
@@ -16,7 +16,6 @@ branches:
 script:
 - yarn lint
 - yarn build
-- yarn run check
 deploy:
 - provider: script
   skip-cleanup: true
